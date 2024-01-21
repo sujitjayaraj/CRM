@@ -21,11 +21,16 @@ public class Client {
     @NotBlank(message = "Client Name is mandatory")
     private String name;
 
+    private String status;
+
     //Tax Identification Number
     @Pattern(regexp = "\\d{11}", message = "TIN must be 11 digits")
     private String tin;
 
     private LocalDateTime createdOn;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private ContactPerson contactPerson;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
