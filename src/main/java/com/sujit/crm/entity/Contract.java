@@ -1,9 +1,12 @@
 package com.sujit.crm.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
+@Data
+@Entity
 public class Contract {
 
     @Id
