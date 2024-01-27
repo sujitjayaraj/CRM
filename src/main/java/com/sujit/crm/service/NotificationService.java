@@ -4,8 +4,7 @@ import com.sujit.crm.entity.Event;
 import com.sujit.crm.entity.Notification;
 import com.sujit.crm.repository.EventRepository;
 import com.sujit.crm.repository.NotificationRepository;
-import lombok.extern.log4j.Log4j;
-import org.aspectj.weaver.ast.Not;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@Log4j
+@Log4j2
 public class NotificationService {
     private EventRepository eventRepository;
     private NotificationRepository notificationRepository;
@@ -33,7 +32,7 @@ public class NotificationService {
     public void checkForNotification() {
 
         for(Event event: todayEvents) {
-            if(LocalDateTime.now().isAfter(event.getTime())) {
+            if(LocalDateTime.now().isAfter(event.getCreatedAt())) {
                 List<Notification> notificationList = notificationRepository.findByEvent(event);
                 notificationRepository.deleteAll(notificationList);
                 todayEvents.remove(event);
