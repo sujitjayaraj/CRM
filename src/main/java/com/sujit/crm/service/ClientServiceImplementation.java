@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public class ClientServiceImplementation implements ClientService{
 
@@ -25,8 +26,8 @@ public class ClientServiceImplementation implements ClientService{
         this.addressRepository = addressRepository;
     }
     @Override
-    public Client findById(Long id) {
-        return clientRepository.findOne(id);
+    public Client findById(Long id) throws NoSuchElementException {
+        return clientRepository.findById(id).get();
     }
     @Override
     public Client findByName(String name) {
@@ -56,7 +57,7 @@ public class ClientServiceImplementation implements ClientService{
     }
     @Override
     public void deleteClient(Long id) {
-        clientRepository.delete(id);
+        clientRepository.deleteById(id);
     }
     @Override
     public List<Client> findByUser(User user) {
