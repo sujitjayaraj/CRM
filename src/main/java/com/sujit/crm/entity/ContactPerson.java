@@ -30,7 +30,7 @@ public class ContactPerson {
     @Pattern(regexp = "^[6-9]\\d{9}$", message = "Invalid phone number")
     private String phone;
 
-    private String getName() {
+    public String getName() {
         return getFirstname() + " " + getLastname();
     }
 }
