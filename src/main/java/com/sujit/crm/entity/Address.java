@@ -21,6 +21,8 @@ public class Address {
 
     private String district;
 
+    private String city;
+
     private String street;
 
     @Pattern(regexp = "\\d{6}", message = "Pincode must be 6 digits")

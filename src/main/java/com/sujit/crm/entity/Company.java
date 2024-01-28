@@ -2,9 +2,11 @@ package com.sujit.crm.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
+import lombok.Data;
 
 import java.util.List;
-
+@Data
+@Entity
 public class Company {
 
     @Id
