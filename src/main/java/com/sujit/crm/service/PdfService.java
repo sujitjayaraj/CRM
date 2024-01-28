@@ -11,6 +11,7 @@ import com.sujit.crm.entity.Company;
 import com.sujit.crm.entity.Contract;
 import com.sujit.crm.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,7 +20,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+@Service
 public class PdfService {
 
     @Autowired
