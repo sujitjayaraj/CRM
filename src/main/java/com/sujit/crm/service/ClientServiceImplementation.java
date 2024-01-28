@@ -7,12 +7,13 @@ import com.sujit.crm.repository.AddressRepository;
 import com.sujit.crm.repository.ClientRepository;
 import com.sujit.crm.repository.ContactPersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
-
+@Service
 public class ClientServiceImplementation implements ClientService{
 
     @Autowired
