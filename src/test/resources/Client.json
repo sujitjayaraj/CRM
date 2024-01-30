@@ -1,0 +1,19 @@
+{
+  "name": "Sujit",
+  "status": "lead",
+  "tin": "58239049123",
+  "ContactPerson": {
+    "firstName": "Pranav",
+    "lastName": "Pai",
+    "email": "pranav.pai@gmail.com",
+    "phone": "6463658412"
+  },
+  "address": {
+    "country": "India",
+    "state": "Karnataka",
+    "district": "Dakshina Kannada",
+    "city": "Mangalore",
+    "street": "Bendoorwell",
+    "pincode": "575002"
+  }
+}
