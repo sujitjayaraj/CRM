@@ -18,8 +18,8 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
     List<Client> findByUser(User user);
     List<Client> findByUserOrderByNameAsc(User user);
     List<Client> findByUserIn(List<User> users);
-    List<Client> findByCreatedAfter(LocalDate date);
-    List<Client> findByCreatedBetween(LocalDate startDate, LocalDate endDate);
+    List<Client> findByCreatedOnAfter(LocalDate date);
+    List<Client> findByCreatedOnBetween(LocalDate startDate, LocalDate endDate);
     List<Client> findByStatusOrderByNameAsc(String status);
     List<Client> findByStatusAndAddressCityOrderByNameAsc(String status, String city);
     List<Client> findByAddressCityOrderByNameAsc(String city);

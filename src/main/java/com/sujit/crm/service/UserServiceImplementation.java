@@ -3,6 +3,7 @@ package com.sujit.crm.service;
 import com.sujit.crm.entity.Role;
 import com.sujit.crm.entity.User;
 import com.sujit.crm.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +13,10 @@ import java.util.Set;
 @Service
 public class UserServiceImplementation implements UserService {
     private final UserRepository userRepository;
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
-    public UserServiceImplementation(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    private final BCryptPasswordEncoder passwordEncoder;
+    public UserServiceImplementation(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.passwordEncoder = passwordEncoder;
     }
     @Override
     public User findByEmail(String email) {
@@ -23,7 +24,7 @@ public class UserServiceImplementation implements UserService {
     }
     @Override
     public void saveUser(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setActive(true);
         userRepository.save(user);
     }
