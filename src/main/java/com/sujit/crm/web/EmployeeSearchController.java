@@ -48,7 +48,7 @@ public class EmployeeSearchController {
     @GetMapping(path = "/city")
     public String citySearch(Model model){
         User user = authenticationFacade.getAuthenticatedUser();
-        clientList = clientRepository.findByAddressCityOrderByNameAsc(user, search);
+        clientList = clientRepository.findByAddressCityOrderByNameAsc(user.getOffice().getAddress().getCity());
         model.addAttribute("clientList", clientList);
         search = "clients_from_" + user.getOffice().getAddress().getCity();
         return "employee/search";
