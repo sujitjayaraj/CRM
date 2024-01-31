@@ -74,7 +74,7 @@ public class NotificationService {
      */
     @Scheduled(cron = "0 30 8 * * MON-FRI")
     public void generateMorningNotifications() {
-        List<Event> todayEvents = eventRepository.findByTimeBetween(LocalDateTime.now(), LocalDateTime.now().plusDays(1));
+        List<Event> todayEvents = eventRepository.findByCreatedAtBetween(LocalDateTime.now(), LocalDateTime.now().plusDays(1));
 
         for(Event event: todayEvents) {
             this.generateNotification(event);
