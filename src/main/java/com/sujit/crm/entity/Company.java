@@ -22,6 +22,6 @@ public class Company {
     @Pattern(regexp = "\\d{11}", message = "TIN must be 11 digits")
     private String tin;
 
-    @OneToMany(mappedBy = "address")
+    @OneToMany
     private List<Office> offices;
 }
