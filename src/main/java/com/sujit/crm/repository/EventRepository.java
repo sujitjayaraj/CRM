@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event, Long> {
-    List<Event> findByTimeAfter(LocalDateTime dateTime);
-    List<Event> findByTimeBetween(LocalDateTime start, LocalDateTime end);
+    List<Event> findByCreatedAtAfter(LocalDateTime dateTime);
+    List<Event> findByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
     List<Event> findByClient(Client client);
 }

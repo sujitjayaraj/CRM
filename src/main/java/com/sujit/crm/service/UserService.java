@@ -3,7 +3,6 @@ package com.sujit.crm.service;
 import com.sujit.crm.entity.User;
 
 import java.util.List;
-
 public interface UserService {
     /**
      * @param email user email
