@@ -4,7 +4,6 @@ import com.sujit.crm.entity.Client;
 import com.sujit.crm.entity.User;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ClientService {
 
@@ -14,7 +13,7 @@ public interface ClientService {
      * @param id of type {@link Long}.
      * @return {@link com.sujit.crm.entity.Client}.
      */
-    Optional<Client> findById(Long id);
+    Client findById(Long id);
 
     /**
      * Returns {@link com.sujit.crm.entity.Client} by given company name.

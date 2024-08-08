@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ClientServiceImpl implements ClientService {
@@ -29,8 +28,8 @@ public class ClientServiceImpl implements ClientService {
         this.addressRepository = addressRepository;
     }
     @Override
-    public Optional<Client> findById(Long id) {
-        return clientRepository.findById(id);
+    public Client findById(Long id) {
+        return clientRepository.findById(id).orElse(null);
     }
 
     @Override

@@ -11,6 +11,7 @@ import com.sujit.crm.dto.ClientDto;
 import com.sujit.crm.dto.ClientMapper;
 import com.sujit.crm.entity.Client;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -20,6 +21,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class CsvImportExportService {
 
     private static final String TYPE = ".csv";
