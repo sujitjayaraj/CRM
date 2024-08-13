@@ -23,6 +23,6 @@ public class Company {
     @Pattern(regexp = "\\d{11}")
     private String tin;
 
-    @OneToMany(mappedBy = "address")
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private List<Office> offices;
 }

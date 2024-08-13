@@ -11,6 +11,7 @@ import lombok.Data;
 @Data
 @Entity
 public class ContactPerson {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
