@@ -5,14 +5,14 @@ import com.sujit.crm.entity.Client;
 import com.sujit.crm.entity.Contract;
 import com.sujit.crm.entity.User;
 import com.sujit.crm.repository.ContractRepository;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
 import java.util.List;
 
-@Log4j
+@Log4j2
 @Service
 public class ContractService {
 
